@@ -1,4 +1,4 @@
-extends Sprite
+extends AnimatedSprite
 
 
 # Declare member variables here. Examples:

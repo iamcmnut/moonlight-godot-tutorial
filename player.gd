@@ -17,9 +17,14 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = WALK_SPEED
+		$Sprite.play("run")
+		$Sprite.flip_h = false
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -WALK_SPEED
+		$Sprite.play("run")
+		$Sprite.flip_h = true
 	else:
+		$Sprite.play("idle")
 		velocity.x = 0
 	
 	if Input.is_action_pressed("ui_up"):
