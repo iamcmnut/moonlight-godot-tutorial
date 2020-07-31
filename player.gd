@@ -4,7 +4,7 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-const WALK_SPEED = 100
+const WALK_SPEED = 200
 var velocity = Vector2()
 
 
@@ -12,9 +12,8 @@ var velocity = Vector2()
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = WALK_SPEED
 		$Sprite.play("run")
@@ -28,7 +27,7 @@ func _process(delta):
 		velocity.x = 0
 	
 	if Input.is_action_pressed("ui_up"):
-		velocity.y = - WALK_SPEED
+		velocity.y = -WALK_SPEED
 	elif Input.is_action_pressed("ui_down"):
 		velocity.y = WALK_SPEED
 	else:
